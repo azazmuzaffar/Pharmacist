@@ -1,96 +1,49 @@
-// ---------------------------------------
-//  Nice Select Plugin
-// ---------------------------------------
-$(document).ready(function () {
-  $(".select").niceSelect();
-});
+/* Set Available Dates */
+var availableDates = ["5-4-2023", "6-4-2023", "7-4-2023", "9-4-2023", "10-4-2023", "11-4-2023", "12-4-2023", "13-4-2023"];
+function available(date) {
+  dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+  if ($.inArray(dmy, availableDates) != -1) {
+    return [true, "", "Available"];
+  } else {
+    return [false, "", "unAvailable"];
+  }
+}
 
-// ---------------------------------------
-//  (Select2) Multi Select Plugin
-// ---------------------------------------
-var multiselect = jQuery("#sectorSelect").multiselect({
-  columns: 1,
-  placeholder: "Sector",
-  search: true,
-});
+/* Set Date Fuction */
+function setDate(date) {
+  console.log(date);
+  if (date) {
+    document.querySelector(".selected .selected__date").textContent = date;
+  }
+}
 
-// ---------------------------------------
-//  Logic for Step # 5 - Selection etc
-// ---------------------------------------
-$(document).ready(function () {
-  // Initialize select2
-  $("#SelExample").select2();
-  $(".select2-selection__rendered").text("Country");
+/* Set Time Fuction */
+function setTime(time) {
+  console.log(time);
+  if (time) {
+    document.querySelector(".selected .selected__time").textContent = time;
+  }
+}
 
-  // Search the Sector
-  $(".search-sector").keyup(function () {
-    $(".ms-options").addClass("show");
-    let namesLI = document.getElementsByClassName("ms-reflow");
-    let searchQuery = $(this).val().toLowerCase();
-    for (let index = 0; index < namesLI.length; index++) {
-      const name = namesLI[index].textContent.toLowerCase();
-      if (name.includes(searchQuery)) {
-        namesLI[index].style.display = "block";
-      } else {
-        namesLI[index].style.display = "none";
-      }
-    }
-
-    // Show and Hide Reset icon
-    if ($(".search-sector").val() != "") {
-      $(".reset-input").addClass("show");
-    } else {
-      $(".reset-input").removeClass("show");
-    }
-  });
-
-  // Browse the Sector
-  $(document).change(function () {
-    $(".search-sector").val($(".ms-reflow.selected").text());
-
-    // Show and Hide Reset icon
-    if ($(".search-sector").val() != "") {
-      $(".reset-input").addClass("show");
-    } else {
-      $(".reset-input").removeClass("show");
-    }
-  });
-
-  // Hide Dropdown on Selecting option
-  $(".ms-reflow").click(function (e) {
-    $(".ms-options").removeClass("show");
-  });
-
-  // Reset input and selection on Cick
-  $(".reset-input").click(function (e) {
-    $(".ms-options").removeClass("show");
-    $(".search-sector").val("");
-    $(this).removeClass("show");
-    $(".ms-reflow").removeClass("selected");
-
-    let namesLI = document.getElementsByClassName("ms-reflow");
-    let searchQuery = "";
-    for (let index = 0; index < namesLI.length; index++) {
-      const name = namesLI[index].textContent.toLowerCase();
-      if (name.includes(searchQuery)) {
-        namesLI[index].style.display = "block";
-      } else {
-        namesLI[index].style.display = "none";
-      }
-    }
-  });
-
-  // Browse the Sector
-  $(".search-sector-by-browse").click(function (e) {
-    e.stopPropagation();
-    $(".ms-options").addClass("show");
-  });
-});
-
-// Cliking outside the dropdown
-$(document).click(function (e) {
-  var $target = $(e.target);
-  if (!$target.closest(".input-has-btn").length && !$target.hasClass("input-has-btn") && !$target.closest(".ms-options").length && !$target.hasClass("ms-options")) {
-    $(".ms-options").removeClass("show");
+/* Date Picker */
+$(function () {
+  if (document.querySelector("#datepicker")) {
+    $("#datepicker").datepicker({
+      beforeShowDay: available,
+      onSelect: function (dateText, inst) {
+        setDate(dateText);
+      },
+    });
   }
 });
+
+/* Time Slot Set */
+var timeSlots = document.querySelectorAll(".time-slot");
+if (timeSlots) {
+  timeSlots.forEach((element) => {
+    element.addEventListener("click", function (e) {
+      e.preventDefault();
+      setTime(this.innerText);
+    });
+  });
+}

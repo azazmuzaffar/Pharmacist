@@ -68,14 +68,20 @@ span {
   white-space: nowrap;
 }
 
-.copy-sm, .dashboard .appointment-record--additional-info p, .login-signup__body form .forgot-password a,
-.login-signup__body .form .forgot-password a, .btn-outline-success {
+.copy-sm, .ui-state-default, .ui-datepicker-calendar thead tr th span, .ui-datepicker-prev:hover,
+.ui-datepicker-next:hover,
+.ui-datepicker-prev:hover:after,
+.ui-datepicker-next:hover:after, .ui-datepicker-header, .dashboard .appointment-record--additional-info p, .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot, .login-signup__body form .forgot-password a,
+.login-signup__body .form .forgot-password a, .btn-gray, .btn-outline-success {
   font-size: 20px;
   line-height: 1.21;
 }
 @media screen and (max-width: 767px) {
-  .copy-sm, .dashboard .appointment-record--additional-info p, .login-signup__body form .forgot-password a,
-  .login-signup__body .form .forgot-password a, .btn-outline-success {
+  .copy-sm, .ui-state-default, .ui-datepicker-calendar thead tr th span, .ui-datepicker-prev:hover,
+  .ui-datepicker-next:hover,
+  .ui-datepicker-prev:hover:after,
+  .ui-datepicker-next:hover:after, .ui-datepicker-header, .dashboard .appointment-record--additional-info p, .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot, .login-signup__body form .forgot-password a,
+  .login-signup__body .form .forgot-password a, .btn-gray, .btn-outline-success {
     font-size: 16px;
   }
 }
@@ -185,6 +191,18 @@ span {
 .btn-success:hover, .btn-success:focus {
   box-shadow: none;
   color: #fff;
+}
+.btn-gray {
+  background: #D9D9D9;
+  color: #000;
+  font-weight: 500;
+  padding: 9px 19px;
+  border-radius: 0;
+}
+.btn-gray:hover, .btn-gray:focus {
+  box-shadow: none;
+  color: #fff;
+  background: #12268F;
 }
 
 .text-dark-blue {
@@ -1003,6 +1021,40 @@ ul.list-reset {
 .dashboard__body .booking-confirmation__success-message .content-block .btn-wrapper .btn {
   margin: 0 auto;
 }
+.dashboard__body .book-appointment {
+  padding: 30px 0;
+}
+.dashboard__body .book-appointment__inner {
+  width: 100%;
+  max-width: 795px;
+  margin: 0 auto;
+  padding: 60px 60px 40px;
+  border: 3px solid #12268F;
+  color: #12268F;
+}
+.dashboard__body .book-appointment__inner hr {
+  background: #12268F;
+  margin: 24px 0;
+}
+.dashboard__body .book-appointment__inner .book-appointment__slot .time-slot {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  text-align: center;
+  color: rgb(61, 61, 61);
+  text-decoration: none;
+  border: 2px solid rgb(189, 189, 189);
+  padding: 6px 4px;
+}
+.dashboard__body .book-appointment__inner .book-appointment__slot .time-slot:hover, .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot:focus {
+  border-color: #12268F;
+  color: #12268F;
+}
+.dashboard__body .book-appointment__inner .selected {
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 500;
+}
 .dashboard .appointment-record {
   text-align: left;
   padding: 30px 0 60px;
@@ -1065,4 +1117,105 @@ ul.list-reset {
 }
 .dashboard .appointment-record--additional-info {
   margin-top: 80px;
+}
+.calendar {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ui-datepicker-header {
+  color: #000;
+  position: relative;
+  padding: 20px 0;
+  margin-bottom: 10px;
+}
+
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ui-datepicker-prev span,
+.ui-datepicker-next span {
+  display: none;
+}
+
+.ui-datepicker-prev:after,
+.ui-datepicker-next:after {
+  content: "";
+  display: block;
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='19' viewBox='0 0 11 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_528_2)'%3E%3Cpath d='M2.61227 18.5504C2.01281 19.1505 1.04238 19.1475 0.445866 18.5449C-0.151014 17.9418 -0.148061 16.9662 0.451402 16.3665L7.29872 9.50019L0.451402 2.63347C-0.148061 2.03378 -0.151014 1.05818 0.445866 0.45515C1.04238 -0.147507 2.01281 -0.150475 2.61227 0.449583L10.5541 8.41363C11.1509 9.01665 11.148 9.99226 10.5485 10.5919L2.61227 18.5504Z' fill='%23545454'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_528_2'%3E%3Crect width='11' height='19' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  width: 11px;
+  height: 19px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.ui-datepicker-prev {
+  right: auto;
+  left: 0;
+}
+.ui-datepicker-prev::after {
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='19' viewBox='0 0 11 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_528_2)'%3E%3Cpath d='M8.38773 0.449578C8.98719 -0.15048 9.95763 -0.147512 10.5541 0.455145C11.151 1.05817 11.1481 2.03378 10.5486 2.63347L3.70128 9.49981L10.5486 16.3665C11.1481 16.9662 11.151 17.9418 10.5541 18.5449C9.95762 19.1475 8.98719 19.1505 8.38773 18.5504L0.445947 10.5864C-0.150932 9.98335 -0.147978 9.00774 0.451485 8.40805L8.38773 0.449578Z' fill='%23545454'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_528_2'%3E%3Crect width='11' height='19' fill='white' transform='translate(11 19) rotate(-180)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+.ui-datepicker-title {
+  text-align: center;
+}
+
+.ui-datepicker-calendar {
+  width: 100%;
+  text-align: center;
+}
+
+.ui-datepicker-calendar thead tr th span {
+  display: block;
+  width: 40px;
+  color: rgb(61, 61, 61);
+  font-weight: 500;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.ui-state-default {
+  display: block;
+  text-decoration: none;
+  color: #D9D9D9;
+  font-weight: 400;
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  color: rgb(61, 61, 61);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 2px auto;
+  font-weight: 500;
+  transition: 0.3s all ease;
+}
+
+.ui-state-default:hover {
+  background: #12268F;
+  color: #fff !important;
+}
+
+.ui-state-highlight {
+  background: #D9D9D9;
+  color: #000;
+}
+
+.ui-state-active {
+  background: #12268F;
+  color: #fff;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+  color: #c7c7c7;
+  font-weight: 400;
+  border: 2px solid transparent;
 }/*# sourceMappingURL=app.css.map */
