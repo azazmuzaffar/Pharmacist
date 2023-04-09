@@ -53,6 +53,13 @@ span {
   margin: 0;
 }
 
+@media screen and (max-width: 767px) {
+  h2,
+  .h2 {
+    font-size: 20px;
+  }
+}
+
 .body-font-style, .dashboard .appointment-record--for .text-wrapper h6, .dashboard__body .step-info__top .step-about .choose-option__select .form-select, .form-select, .form-control, .btn-success, .btn-outline-dark-blue, .btn-outline-blue, .btn-outline-black, .btn-has-shadow {
   font-size: 24px;
   font-weight: 400;
@@ -83,6 +90,15 @@ span {
   .ui-datepicker-next:hover:after, .ui-datepicker-header, .dashboard .appointment-record--additional-info p, .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot, .login-signup__body form .forgot-password a,
   .login-signup__body .form .forgot-password a, .btn-gray, .btn-outline-success {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .copy-sm, .ui-state-default, .ui-datepicker-calendar thead tr th span, .ui-datepicker-prev:hover,
+  .ui-datepicker-next:hover,
+  .ui-datepicker-prev:hover:after,
+  .ui-datepicker-next:hover:after, .ui-datepicker-header, .dashboard .appointment-record--additional-info p, .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot, .login-signup__body form .forgot-password a,
+  .login-signup__body .form .forgot-password a, .btn-gray, .btn-outline-success {
+    font-size: 14px;
   }
 }
 
@@ -300,6 +316,16 @@ ul.list-reset {
   color: #A40909;
 }
 
+.language {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+@media screen and (max-width: 767px) {
+  .language {
+    right: 20px;
+  }
+}
 .language a {
   display: flex;
   align-items: center;
@@ -317,6 +343,11 @@ ul.list-reset {
   margin-left: auto;
   transition: 0.4s all ease;
 }
+@media screen and (max-width: 767px) {
+  .language a {
+    padding: 2px 5px;
+  }
+}
 .language a:hover {
   border-color: #007200;
 }
@@ -330,6 +361,12 @@ ul.list-reset {
   min-width: 30px;
   line-height: 1;
   transition: 0.4s all ease;
+}
+@media screen and (max-width: 767px) {
+  .language .icon-wrapper {
+    max-width: 24px;
+    min-width: 24px;
+  }
 }
 .language .icon-wrapper svg {
   width: 100%;
@@ -359,11 +396,13 @@ ul.list-reset {
 }
 
 .login-signup {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   padding: 60px 0 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 .login-signup__top .image-wrapper {
   width: 100%;
@@ -374,7 +413,7 @@ ul.list-reset {
 }
 @media screen and (max-width: 767px) {
   .login-signup__top .image-wrapper {
-    max-width: 308px;
+    max-width: 265px;
   }
 }
 .login-signup__top .image-wrapper img,
@@ -436,7 +475,7 @@ ul.list-reset {
 @media screen and (max-width: 390px) {
   .login-signup__body form .message,
   .login-signup__body .form .message {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 .login-signup__body form .message--success,
@@ -457,6 +496,12 @@ ul.list-reset {
   max-width: 795px;
   margin: 0 auto;
 }
+@media screen and (max-width: 767px) {
+  .login-signup__body form--new-password .form__inner,
+  .login-signup__body .form--new-password .form__inner {
+    max-width: 500px;
+  }
+}
 .login-signup__body form--new-password .form-input,
 .login-signup__body .form--new-password .form-input {
   display: flex;
@@ -467,6 +512,12 @@ ul.list-reset {
   .login-signup__body form--new-password .form-input label,
   .login-signup__body .form--new-password .form-input label {
     margin: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  .login-signup__body form--new-password .form-input,
+  .login-signup__body .form--new-password .form-input {
+    display: block;
   }
 }
 .login-signup__body form--new-password .form-input .form-input-field,
@@ -484,6 +535,18 @@ ul.list-reset {
 }
 .login-signup__body .password-reset__success .icon-wrapper {
   color: #3aca76;
+  width: 100%;
+  max-width: 133px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .login-signup__body .password-reset__success .icon-wrapper {
+    max-width: 103px;
+  }
+}
+.login-signup__body .password-reset__success .icon-wrapper svg {
+  width: 100%;
+  height: auto;
 }
 .login-signup__body .password-reset__success .content-block {
   margin-top: 32px;
@@ -505,6 +568,15 @@ ul.list-reset {
   display: flex;
   align-items: start;
 }
+.dashboard__top--app-detail {
+  display: flex;
+  align-items: start;
+}
+@media screen and (max-width: 1199px) {
+  .dashboard__top--app-detail {
+    flex-direction: column-reverse;
+  }
+}
 @media screen and (max-width: 767px) {
   .dashboard__top {
     flex-direction: column-reverse;
@@ -518,7 +590,7 @@ ul.list-reset {
 }
 @media screen and (max-width: 767px) {
   .dashboard__top .image-wrapper {
-    max-width: 308px;
+    max-width: 265px;
   }
 }
 .dashboard__top .image-wrapper img,
@@ -528,6 +600,15 @@ ul.list-reset {
 }
 .dashboard__top .dashboard-login {
   margin-left: auto;
+}
+@media screen and (max-width: 1199px) {
+  .dashboard__top .dashboard-login {
+    width: 100%;
+    text-align: right;
+  }
+  .dashboard__top .dashboard-login a {
+    margin-left: auto;
+  }
 }
 .dashboard__top .content-block {
   width: 100%;
@@ -542,6 +623,13 @@ ul.list-reset {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
   padding-left: 0;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__top .dashboard-options {
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 .dashboard__top .dashboard-options__each {
   color: #008000;
@@ -577,6 +665,21 @@ ul.list-reset {
   padding: 7px 12px 7px 20px;
   background: #D9D9D9;
 }
+@media screen and (max-width: 991px) {
+  .dashboard__body .step-info__top {
+    padding: 7px 12px 7px 12px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .dashboard__body .step-info__top.has-options {
+    align-items: start;
+  }
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__top.has-options {
+    flex-direction: column-reverse;
+  }
+}
 .dashboard__body .step-info__top .btn {
   padding: 4px 20px;
 }
@@ -584,17 +687,38 @@ ul.list-reset {
   flex-grow: 1;
   margin-right: 20px;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__top .step-about {
+    margin-right: 0;
+  }
+}
 .dashboard__body .step-info__top .step-about .choose-option {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 1199px) {
+  .dashboard__body .step-info__top .step-about .choose-option {
+    display: block;
+    text-align: center;
+  }
 }
 .dashboard__body .step-info__top .step-about .choose-option__title {
   padding: 1px 4px;
   background: #fff;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__top .step-about .choose-option__title {
+    border-bottom: 1px solid #D9D9D9;
+  }
+}
 .dashboard__body .step-info__top .step-about .choose-option__select {
   width: 100%;
   max-width: 220px;
+}
+@media screen and (max-width: 1199px) {
+  .dashboard__body .step-info__top .step-about .choose-option__select {
+    max-width: 100%;
+  }
 }
 .dashboard__body .step-info__top .step-about .choose-option__select .form-select {
   border: none;
@@ -609,13 +733,25 @@ ul.list-reset {
   background-image: url("data:image/svg+xml,%3Csvg width='26' height='15' viewBox='0 0 26 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 15L25.9904 0H0.00961876L13 15Z' fill='%23D9D9D9'/%3E%3C/svg%3E%0A");
   background-size: 24px;
 }
+@media screen and (max-width: 1199px) {
+  .dashboard__body .step-info__top .step-about .choose-option__select .form-select option {
+    text-align: center;
+  }
+}
 .dashboard__body .step-info__top .go-step-back {
-  min-width: 100px;
-  max-width: 100px;
+  flex-shrink: 0;
   margin-left: auto;
+}
+.dashboard__body .step-info__top .go-step-back a {
+  margin: 0;
 }
 .dashboard__body .step-info__body {
   padding-bottom: 75px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body {
+    padding-bottom: 45px;
+  }
 }
 .dashboard__body .step-info__body .content-block {
   width: 100%;
@@ -630,6 +766,17 @@ ul.list-reset {
 }
 .dashboard__body .step-info__body .content-block--patient-information {
   max-width: 1226px;
+}
+@media screen and (max-width: 1199px) {
+  .dashboard__body .step-info__body .content-block--patient-information form .form-input,
+  .dashboard__body .step-info__body .content-block--patient-information .form .form-input {
+    display: block !important;
+  }
+  .dashboard__body .step-info__body .content-block--patient-information form .form-input label,
+  .dashboard__body .step-info__body .content-block--patient-information .form .form-input label {
+    max-width: 100% !important;
+    margin-bottom: 10px;
+  }
 }
 .dashboard__body .step-info__body .content-block form .form-input,
 .dashboard__body .step-info__body .content-block .form .form-input {
@@ -716,19 +863,58 @@ ul.list-reset {
 .dashboard__body .step-info__body .content-block .options__each:hover .text-wrapper {
   color: #005c00;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-block {
+    margin-right: -20px;
+  }
+}
 .dashboard__body .step-info__body .table-wrapper {
   width: 100%;
   max-width: 1440px;
   margin: 30px auto;
-  min-height: 450px;
   display: flex;
   flex-direction: column;
+  overflow: auto;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper {
+    padding-right: 20px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper.bg-gray {
   padding-top: 16px;
   padding-bottom: 32px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.0666666667);
   background: #EBEBEB;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper.bg-gray {
+    padding-bottom: 16px;
+  }
+}
+.dashboard__body .step-info__body .table-wrapper table--sm,
+.dashboard__body .step-info__body .table-wrapper .table--sm {
+  min-width: 650px;
+}
+.dashboard__body .step-info__body .table-wrapper table--md,
+.dashboard__body .step-info__body .table-wrapper .table--md {
+  min-width: 850px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table--md,
+  .dashboard__body .step-info__body .table-wrapper .table--md {
+    min-width: 650px;
+  }
+}
+.dashboard__body .step-info__body .table-wrapper table--lg,
+.dashboard__body .step-info__body .table-wrapper .table--lg {
+  min-width: 950px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table--lg,
+  .dashboard__body .step-info__body .table-wrapper .table--lg {
+    min-width: 750px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper table table > :not(caption) > * > *,
 .dashboard__body .step-info__body .table-wrapper .table table > :not(caption) > * > * {
@@ -741,6 +927,26 @@ ul.list-reset {
 .dashboard__body .step-info__body .table-wrapper .table td,
 .dashboard__body .step-info__body .table-wrapper .table th {
   border: none;
+}
+@media screen and (max-width: 992px) {
+  .dashboard__body .step-info__body .table-wrapper table tr,
+  .dashboard__body .step-info__body .table-wrapper table td,
+  .dashboard__body .step-info__body .table-wrapper table th,
+  .dashboard__body .step-info__body .table-wrapper .table tr,
+  .dashboard__body .step-info__body .table-wrapper .table td,
+  .dashboard__body .step-info__body .table-wrapper .table th {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table tr,
+  .dashboard__body .step-info__body .table-wrapper table td,
+  .dashboard__body .step-info__body .table-wrapper table th,
+  .dashboard__body .step-info__body .table-wrapper .table tr,
+  .dashboard__body .step-info__body .table-wrapper .table td,
+  .dashboard__body .step-info__body .table-wrapper .table th {
+    font-size: 16px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper table thead tr,
 .dashboard__body .step-info__body .table-wrapper .table thead tr {
@@ -764,6 +970,15 @@ ul.list-reset {
   bottom: -8px;
   left: 0;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table thead tr th:first-of-type:after, .dashboard__body .step-info__body .table-wrapper table thead tr th:last-of-type:after,
+  .dashboard__body .step-info__body .table-wrapper .table thead tr th:first-of-type:after,
+  .dashboard__body .step-info__body .table-wrapper .table thead tr th:last-of-type:after {
+    width: 10px;
+    height: 10px;
+    bottom: -6px;
+  }
+}
 .dashboard__body .step-info__body .table-wrapper table thead tr th:last-of-type:after,
 .dashboard__body .step-info__body .table-wrapper .table thead tr th:last-of-type:after {
   left: auto;
@@ -771,11 +986,23 @@ ul.list-reset {
 }
 .dashboard__body .step-info__body .table-wrapper table tbody tr td,
 .dashboard__body .step-info__body .table-wrapper .table tbody tr td {
-  padding: 16px 0;
+  padding: 16px 8px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table tbody tr td,
+  .dashboard__body .step-info__body .table-wrapper .table tbody tr td {
+    padding: 12px 8px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper table tbody tr:first-of-type td,
 .dashboard__body .step-info__body .table-wrapper .table tbody tr:first-of-type td {
   padding-top: 32px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table tbody tr:first-of-type td,
+  .dashboard__body .step-info__body .table-wrapper .table tbody tr:first-of-type td {
+    padding-top: 20px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper table th,
 .dashboard__body .step-info__body .table-wrapper table tr,
@@ -787,6 +1014,12 @@ ul.list-reset {
 .dashboard__body .step-info__body .table-wrapper table th,
 .dashboard__body .step-info__body .table-wrapper .table th {
   padding: 20px 10px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table th,
+  .dashboard__body .step-info__body .table-wrapper .table th {
+    padding: 18px 6px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper table th,
 .dashboard__body .step-info__body .table-wrapper table td,
@@ -810,6 +1043,14 @@ ul.list-reset {
   margin: 0;
   margin-left: auto;
   margin-right: 20px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper table th:last-of-type .btn,
+  .dashboard__body .step-info__body .table-wrapper table td:last-of-type .btn,
+  .dashboard__body .step-info__body .table-wrapper .table th:last-of-type .btn,
+  .dashboard__body .step-info__body .table-wrapper .table td:last-of-type .btn {
+    margin-right: 0;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper table--simple thead tr,
 .dashboard__body .step-info__body .table-wrapper .table--simple thead tr {
@@ -847,16 +1088,31 @@ ul.list-reset {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 991px) {
+  .dashboard__body .step-info__body .table-wrapper .table-pagination {
+    align-items: flex-start;
+  }
+}
 .dashboard__body .step-info__body .table-wrapper .table-pagination__stats {
   display: flex;
   align-items: center;
   flex-grow: 1;
+}
+@media screen and (max-width: 991px) {
+  .dashboard__body .step-info__body .table-wrapper .table-pagination__stats {
+    display: block;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper .table-pagination__stats .pagination {
   margin-bottom: 0;
 }
 .dashboard__body .step-info__body .table-wrapper .table-pagination__stats .pagination .page-item {
   margin-right: 24px;
+}
+@media screen and (max-width: 991px) {
+  .dashboard__body .step-info__body .table-wrapper .table-pagination__stats .pagination .page-item {
+    margin-right: 14px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper .table-pagination__stats .pagination .page-item:last-of-type {
   margin-right: 0;
@@ -875,6 +1131,12 @@ ul.list-reset {
   font-weight: 500;
   transition: 0.4s all ease;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info__body .table-wrapper .table-pagination__stats .pagination .page-item .page-link {
+    width: 34px;
+    height: 34px;
+  }
+}
 .dashboard__body .step-info__body .table-wrapper .table-pagination__stats .pagination .page-item .page-link[aria-label=Previous], .dashboard__body .step-info__body .table-wrapper .table-pagination__stats .pagination .page-item .page-link[aria-label=Next] {
   background: #D9D9D9;
 }
@@ -889,6 +1151,11 @@ ul.list-reset {
 .dashboard__body .step-info__body .table-wrapper .table-pagination__stats--items-per-page {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 991px) {
+  .dashboard__body .step-info__body .table-wrapper .table-pagination__stats--items-per-page {
+    margin-top: 20px;
+  }
 }
 .dashboard__body .step-info__body .table-wrapper .table-pagination__stats--items-per-page .form-select {
   max-width: 85px;
@@ -908,6 +1175,11 @@ ul.list-reset {
   border: 1px solid #102F6A;
   padding: 14px 12px 14px 20px;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info--2 .step-info__top {
+    padding: 9px 12px 9px 12px;
+  }
+}
 .dashboard__body .step-info--2 .step-info__body .table-wrapper .table {
   color: #102F6A;
 }
@@ -917,8 +1189,23 @@ ul.list-reset {
 .dashboard__body .step-info--2 .step-info__body .table-wrapper .table thead tr th:first-of-type::after, .dashboard__body .step-info--2 .step-info__body .table-wrapper .table thead tr th:last-of-type::after {
   background: #102F6A;
 }
+@media screen and (max-width: 992px) {
+  .dashboard__body .step-info--2 .step-info__body .table-wrapper .table tbody tr td .btn-success {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .step-info--2 .step-info__body .table-wrapper .table tbody tr td .btn-success {
+    font-size: 16px;
+  }
+}
 .dashboard__body .registration {
   padding: 40px 0 60px;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .registration {
+    padding: 20px 0 45px;
+  }
 }
 .dashboard__body .registration .title-block p.text-red {
   font-weight: 500;
@@ -933,9 +1220,19 @@ ul.list-reset {
   width: 100%;
   max-width: 650px;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .registration .form__inner {
+    padding-left: 0;
+  }
+}
 .dashboard__body .registration .form__inner .form-input {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .registration .form__inner .form-input {
+    display: block;
+  }
 }
 @media screen and (min-width: 767px) {
   .dashboard__body .registration .form__inner .form-input .form-input-label {
@@ -995,6 +1292,12 @@ ul.list-reset {
   flex-direction: column;
   min-height: 500px;
 }
+@media screen and (max-width: 767px) {
+  .dashboard__body .booking-confirmation__success {
+    padding: 40px 0;
+    min-height: 400px;
+  }
+}
 .dashboard__body .booking-confirmation__success-message {
   width: 100%;
   height: 100%;
@@ -1008,6 +1311,18 @@ ul.list-reset {
 }
 .dashboard__body .booking-confirmation__success-message .icon-wrapper {
   color: #3aca76;
+  width: 100%;
+  max-width: 133px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .dashboard__body .booking-confirmation__success-message .icon-wrapper {
+    max-width: 103px;
+  }
+}
+.dashboard__body .booking-confirmation__success-message .icon-wrapper svg {
+  width: 100%;
+  height: auto;
 }
 .dashboard__body .booking-confirmation__success-message .content-block {
   margin-top: 32px;
@@ -1024,6 +1339,11 @@ ul.list-reset {
 .dashboard__body .book-appointment {
   padding: 30px 0;
 }
+@media screen and (max-width: 576px) {
+  .dashboard__body .book-appointment {
+    padding-top: 0;
+  }
+}
 .dashboard__body .book-appointment__inner {
   width: 100%;
   max-width: 795px;
@@ -1032,9 +1352,20 @@ ul.list-reset {
   border: 3px solid #12268F;
   color: #12268F;
 }
+@media screen and (max-width: 576px) {
+  .dashboard__body .book-appointment__inner {
+    padding: 20px;
+    border-width: 2px;
+  }
+}
 .dashboard__body .book-appointment__inner hr {
   background: #12268F;
   margin: 24px 0;
+}
+@media screen and (max-width: 576px) {
+  .dashboard__body .book-appointment__inner hr {
+    margin: 16px 0;
+  }
 }
 .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot {
   display: block;
@@ -1043,7 +1374,7 @@ ul.list-reset {
   text-align: center;
   color: rgb(61, 61, 61);
   text-decoration: none;
-  border: 2px solid rgb(189, 189, 189);
+  border: 1px solid rgb(189, 189, 189);
   padding: 6px 4px;
 }
 .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot:hover, .dashboard__body .book-appointment__inner .book-appointment__slot .time-slot:focus {
@@ -1066,11 +1397,29 @@ ul.list-reset {
   border: 1px solid rgb(107, 106, 106);
   border-radius: 15px;
 }
+@media screen and (max-width: 1199px) {
+  .dashboard .appointment-record--for {
+    width: 100%;
+    max-width: 635px;
+    margin-top: 30px !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .dashboard .appointment-record--for {
+    display: block;
+    padding: 20px;
+  }
+}
 .dashboard .appointment-record--for .icon-wrapper {
   width: 100%;
   min-width: 49px;
   max-width: 49px;
   margin-right: 20px;
+}
+@media screen and (max-width: 576px) {
+  .dashboard .appointment-record--for .icon-wrapper {
+    margin-bottom: 12px;
+  }
 }
 .dashboard .appointment-record--for .icon-wrapper img,
 .dashboard .appointment-record--for .icon-wrapper svg {
@@ -1086,6 +1435,16 @@ ul.list-reset {
 .dashboard .appointment-record--icon {
   text-align: center;
   color: #008000;
+}
+@media screen and (max-width: 991px) {
+  .dashboard .appointment-record--icon {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .dashboard .appointment-record--icon {
+    margin-bottom: 40px;
+  }
 }
 .dashboard .appointment-record--icon .icon-wrapper {
   width: 100%;
@@ -1105,18 +1464,50 @@ ul.list-reset {
   font-size: 32px;
   line-height: 1.31;
 }
+@media screen and (max-width: 991px) {
+  .dashboard .appointment-record--detail h4 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .dashboard .appointment-record--detail h4 {
+    font-size: 24px;
+  }
+}
 .dashboard .appointment-record--detail ul li {
   margin-bottom: 20px;
+}
+@media screen and (min-width: 767px) {
+  .dashboard .appointment-record--detail ul li {
+    white-space: nowrap;
+  }
 }
 .dashboard .appointment-record--detail ul li:last-of-type {
   margin-bottom: 0;
 }
 .dashboard .appointment-record--detail ul li span {
+  font-weight: 600;
   display: inline-block;
   min-width: 270px;
 }
+@media screen and (max-width: 767px) {
+  .dashboard .appointment-record--detail ul li span {
+    display: block;
+    margin-bottom: 4px;
+  }
+}
 .dashboard .appointment-record--additional-info {
   margin-top: 80px;
+}
+@media screen and (max-width: 991px) {
+  .dashboard .appointment-record--additional-info {
+    margin-top: 60px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .dashboard .appointment-record--additional-info {
+    margin-top: 40px;
+  }
 }
 .calendar {
   border-radius: 4px;
@@ -1197,6 +1588,12 @@ ul.list-reset {
   margin: 2px auto;
   font-weight: 500;
   transition: 0.3s all ease;
+}
+@media screen and (max-width: 576px) {
+  .ui-state-default {
+    width: 35px;
+    height: 35px;
+  }
 }
 
 .ui-state-default:hover {

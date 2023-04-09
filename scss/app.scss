@@ -20,6 +20,7 @@ $blue: #095AD4;
 $green: #008000;
 $red: #A40909;
 $dark-blue: #102F6A;
+$dark-shine-blue: #12268F;
 
 html,
 body,
@@ -64,6 +65,13 @@ span {
     margin: 0;
 }
 
+h2,
+.h2 {
+    @media screen and (max-width: 767px) {
+        font-size: 20px;
+    }
+}
+
 .body-font-style {
     font-size: 24px;
     font-weight: 400;
@@ -84,6 +92,10 @@ span {
 
     @media screen and (max-width: 767px) {
         font-size: 16px;
+    }
+
+    @media screen and (max-width: 576px) {
+        font-size: 14px;
     }
 }
 
@@ -226,7 +238,7 @@ span {
         &:focus {
             box-shadow: none;
             color: $white;
-            background: #12268F;
+            background: $dark-shine-blue;
         }
     }
 }
@@ -335,6 +347,14 @@ ul {
 }
 
 .language {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+    @media screen and (max-width: 767px) {
+        right: 20px;
+    }
+
     a {
         display: flex;
         align-items: center;
@@ -350,6 +370,11 @@ ul {
         text-align: center;
         margin-left: auto;
         transition: .4s all ease;
+
+
+        @media screen and (max-width: 767px) {
+            padding: 2px 5px;
+        }
 
         &:hover {
             border-color: #007200;
@@ -367,6 +392,11 @@ ul {
         min-width: 30px;
         line-height: 1;
         transition: .4s all ease;
+
+        @media screen and (max-width: 767px) {
+            max-width: 24px;
+            min-width: 24px;
+        }
 
         svg {
             width: 100%;
@@ -400,11 +430,13 @@ ul {
 }
 
 .login-signup {
-    height: 100%;
+    height: auto;
+    min-height: 100%;
     padding: 60px 0 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
 
     &__top {
 
@@ -416,7 +448,7 @@ ul {
             margin-bottom: 12px;
 
             @media screen and (max-width: 767px) {
-                max-width: 308px;
+                max-width: 265px;
             }
 
             img,
@@ -479,7 +511,7 @@ ul {
                 }
 
                 @media screen and (max-width: 390px) {
-                    font-size: 15px;
+                    font-size: 14px;
                 }
 
                 &--success {
@@ -500,6 +532,10 @@ ul {
                     width: 100%;
                     max-width: 795px;
                     margin: 0 auto;
+
+                    @media screen and (max-width: 767px) {
+                        max-width: 500px;
+                    }
                 }
 
                 .form-input {
@@ -511,6 +547,10 @@ ul {
                         label {
                             margin: 0;
                         }
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        display: block;
                     }
 
                     .form-input-field {
@@ -531,6 +571,18 @@ ul {
 
                 .icon-wrapper {
                     color: #3aca76;
+                    width: 100%;
+                    max-width: 133px;
+                    margin: 0 auto;
+
+                    @media screen and (max-width: 767px) {
+                        max-width: 103px;
+                    }
+
+                    svg {
+                        width: 100%;
+                        height: auto;
+                    }
                 }
 
                 .content-block {
@@ -560,6 +612,15 @@ ul {
         display: flex;
         align-items: start;
 
+        &--app-detail {
+            display: flex;
+            align-items: start;
+
+            @media screen and (max-width: 1199px) {
+                flex-direction: column-reverse;
+            }
+        }
+
         @media screen and (max-width: 767px) {
             flex-direction: column-reverse;
         }
@@ -571,7 +632,7 @@ ul {
             display: block;
 
             @media screen and (max-width: 767px) {
-                max-width: 308px;
+                max-width: 265px;
             }
 
             img,
@@ -583,6 +644,15 @@ ul {
 
         .dashboard-login {
             margin-left: auto;
+
+            @media screen and (max-width: 1199px) {
+                width: 100%;
+                text-align: right;
+
+                a {
+                    margin-left: auto;
+                }
+            }
         }
 
         .content-block {
@@ -599,6 +669,12 @@ ul {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             padding-left: 0;
+
+            @media screen and (max-width: 767px) {
+                padding: 20px;
+                border-radius: 15px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
 
             &__each {
                 color: $green;
@@ -645,6 +721,20 @@ ul {
                 padding: 7px 12px 7px 20px;
                 background: $gray;
 
+                @media screen and (max-width: 991px) {
+                    padding: 7px 12px 7px 12px;
+                }
+
+                &.has-options {
+                    @media screen and (max-width: 991px) {
+                        align-items: start;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        flex-direction: column-reverse;
+                    }
+                }
+
                 .btn {
                     padding: 4px 20px;
                 }
@@ -653,18 +743,35 @@ ul {
                     flex-grow: 1;
                     margin-right: 20px;
 
+                    @media screen and (max-width: 767px) {
+                        margin-right: 0;
+                    }
+
                     .choose-option {
                         display: flex;
                         align-items: center;
 
+                        @media screen and (max-width: 1199px) {
+                            display: block;
+                            text-align: center;
+                        }
+
                         &__title {
                             padding: 1px 4px;
                             background: $white;
+
+                            @media screen and (max-width: 767px) {
+                                border-bottom: 1px solid $gray;
+                            }
                         }
 
                         &__select {
                             width: 100%;
                             max-width: 220px;
+
+                            @media screen and (max-width: 1199px) {
+                                max-width: 100%;
+                            }
 
                             .form-select {
                                 border: none;
@@ -677,20 +784,33 @@ ul {
                                 appearance: none;
                                 background-image: url("data:image/svg+xml,%3Csvg width='26' height='15' viewBox='0 0 26 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 15L25.9904 0H0.00961876L13 15Z' fill='%23D9D9D9'/%3E%3C/svg%3E%0A");
                                 background-size: 24px;
+
+                                option {
+                                    @media screen and (max-width: 1199px) {
+                                        text-align: center;
+                                    }
+                                }
                             }
                         }
                     }
                 }
 
                 .go-step-back {
-                    min-width: 100px;
-                    max-width: 100px;
+                    flex-shrink: 0;
                     margin-left: auto;
+
+                    a {
+                        margin: 0;
+                    }
                 }
             }
 
             &__body {
                 padding-bottom: 75px;
+
+                @media screen and (max-width: 767px) {
+                    padding-bottom: 45px;
+                }
 
                 .content-block {
                     width: 100%;
@@ -704,6 +824,23 @@ ul {
 
                     &--patient-information {
                         max-width: 1226px;
+
+                        form,
+                        .form {
+
+                            .form-input {
+
+                                @media screen and (max-width: 1199px) {
+                                    display: block !important;
+
+                                    label {
+                                        max-width: 100% !important;
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                            }
+
+                        }
                     }
 
                     form,
@@ -799,23 +936,58 @@ ul {
                     }
                 }
 
+                .table-block {
+                    @media screen and (max-width: 767px) {
+                        margin-right: -20px;
+                    }
+                }
+
                 .table-wrapper {
                     width: 100%;
                     max-width: 1440px;
                     margin: 30px auto;
-                    min-height: 450px;
                     display: flex;
                     flex-direction: column;
+                    overflow: auto;
+
+                    @media screen and (max-width: 767px) {
+                        padding-right: 20px;
+                    }
 
                     &.bg-gray {
                         padding-top: 16px;
                         padding-bottom: 32px;
                         box-shadow: 0 0 4px #00000011;
                         background: #EBEBEB;
+
+                        @media screen and (max-width: 767px) {
+                            padding-bottom: 16px;
+                        }
                     }
 
                     table,
                     .table {
+
+                        &--sm {
+                            min-width: 650px;
+                        }
+
+                        &--md {
+                            min-width: 850px;
+
+
+                            @media screen and (max-width: 767px) {
+                                min-width: 650px;
+                            }
+                        }
+
+                        &--lg {
+                            min-width: 950px;
+
+                            @media screen and (max-width: 767px) {
+                                min-width: 750px;
+                            }
+                        }
 
                         table>:not(caption)>*>* {
                             font-weight: 400;
@@ -825,6 +997,14 @@ ul {
                         td,
                         th {
                             border: none;
+
+                            @media screen and (max-width: 992px) {
+                                font-size: 18px;
+                            }
+
+                            @media screen and (max-width: 767px) {
+                                font-size: 16px;
+                            }
                         }
 
                         thead {
@@ -847,6 +1027,12 @@ ul {
                                             position: absolute;
                                             bottom: -8px;
                                             left: 0;
+
+                                            @media screen and (max-width: 767px) {
+                                                width: 10px;
+                                                height: 10px;
+                                                bottom: -6px;
+                                            }
                                         }
                                     }
 
@@ -863,12 +1049,20 @@ ul {
                         tbody {
                             tr {
                                 td {
-                                    padding: 16px 0;
+                                    padding: 16px 8px;
+
+                                    @media screen and (max-width: 767px) {
+                                        padding: 12px 8px;
+                                    }
                                 }
 
                                 &:first-of-type {
                                     td {
                                         padding-top: 32px;
+
+                                        @media screen and (max-width: 767px) {
+                                            padding-top: 20px;
+                                        }
                                     }
                                 }
                             }
@@ -882,6 +1076,10 @@ ul {
 
                         th {
                             padding: 20px 10px;
+
+                            @media screen and (max-width: 767px) {
+                                padding: 18px 6px;
+                            }
                         }
 
                         th,
@@ -899,6 +1097,10 @@ ul {
                                     margin: 0;
                                     margin-left: auto;
                                     margin-right: 20px;
+
+                                    @media screen and (max-width: 767px) {
+                                        margin-right: 0;
+                                    }
                                 }
                             }
                         }
@@ -948,16 +1150,28 @@ ul {
                         display: flex;
                         align-items: center;
 
+                        @media screen and (max-width: 991px) {
+                            align-items: flex-start;
+                        }
+
                         &__stats {
                             display: flex;
                             align-items: center;
                             flex-grow: 1;
+
+                            @media screen and (max-width: 991px) {
+                                display: block;
+                            }
 
                             .pagination {
                                 margin-bottom: 0;
 
                                 .page-item {
                                     margin-right: 24px;
+
+                                    @media screen and (max-width: 991px) {
+                                        margin-right: 14px;
+                                    }
 
                                     &:last-of-type {
                                         margin-right: 0;
@@ -976,6 +1190,11 @@ ul {
                                         color: $dark-blue;
                                         font-weight: 500;
                                         transition: .4s all ease;
+
+                                        @media screen and (max-width: 767px) {
+                                            width: 34px;
+                                            height: 34px;
+                                        }
 
                                         &[aria-label="Previous"],
                                         &[aria-label="Next"] {
@@ -1000,6 +1219,10 @@ ul {
                             &--items-per-page {
                                 display: flex;
                                 align-items: center;
+
+                                @media screen and (max-width: 991px) {
+                                    margin-top: 20px;
+                                }
 
                                 .form-select {
                                     max-width: 85px;
@@ -1030,6 +1253,10 @@ ul {
                     background: rgba(217, 217, 217, 0.12);
                     border: 1px solid $dark-blue;
                     padding: 14px 12px 14px 20px;
+
+                    @media screen and (max-width: 767px) {
+                        padding: 9px 12px 9px 12px;
+                    }
                 }
 
                 .step-info__body {
@@ -1052,6 +1279,22 @@ ul {
                                     }
                                 }
                             }
+
+                            tbody {
+                                tr {
+                                    td {
+                                        .btn-success {
+                                            @media screen and (max-width: 992px) {
+                                                font-size: 18px;
+                                            }
+
+                                            @media screen and (max-width: 767px) {
+                                                font-size: 16px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -1060,6 +1303,10 @@ ul {
 
         .registration {
             padding: 40px 0 60px;
+
+            @media screen and (max-width: 767px) {
+                padding: 20px 0 45px;
+            }
 
             .title-block {
                 p {
@@ -1082,9 +1329,17 @@ ul {
                     width: 100%;
                     max-width: 650px;
 
+                    @media screen and (max-width: 767px) {
+                        padding-left: 0;
+                    }
+
                     .form-input {
                         display: flex;
                         align-items: center;
+
+                        @media screen and (max-width: 767px) {
+                            display: block;
+                        }
 
                         .form-input-label {
 
@@ -1166,6 +1421,10 @@ ul {
                 flex-direction: column;
                 min-height: 500px;
 
+                @media screen and (max-width: 767px) {
+                    padding: 40px 0;
+                    min-height: 400px;
+                }
 
                 &-message {
                     width: 100%;
@@ -1180,6 +1439,18 @@ ul {
 
                     .icon-wrapper {
                         color: #3aca76;
+                        width: 100%;
+                        max-width: 133px;
+                        margin: 0 auto;
+
+                        @media screen and (max-width: 767px) {
+                            max-width: 103px;
+                        }
+
+                        svg {
+                            width: 100%;
+                            height: auto;
+                        }
                     }
 
                     .content-block {
@@ -1204,17 +1475,30 @@ ul {
         .book-appointment {
             padding: 30px 0;
 
+            @media screen and (max-width: 576px) {
+                padding-top: 0;
+            }
+
             &__inner {
                 width: 100%;
                 max-width: 795px;
                 margin: 0 auto;
                 padding: 60px 60px 40px;
-                border: 3px solid #12268F;
-                color: #12268F;
+                border: 3px solid $dark-shine-blue;
+                color: $dark-shine-blue;
+
+                @media screen and (max-width: 576px) {
+                    padding: 20px;
+                    border-width: 2px;
+                }
 
                 hr {
-                    background: #12268F;
+                    background: $dark-shine-blue;
                     margin: 24px 0;
+
+                    @media screen and (max-width: 576px) {
+                        margin: 16px 0;
+                    }
                 }
 
                 .book-appointment__slot {
@@ -1226,13 +1510,13 @@ ul {
                         @extend .copy-sm;
                         color: rgb(61, 61, 61);
                         text-decoration: none;
-                        border: 2px solid rgb(189, 189, 189);
+                        border: 1px solid rgb(189, 189, 189);
                         padding: 6px 4px;
 
                         &:hover,
                         &:focus {
-                            border-color: #12268F;
-                            color: #12268F;
+                            border-color: $dark-shine-blue;
+                            color: $dark-shine-blue;
                         }
                     }
                 }
@@ -1257,11 +1541,26 @@ ul {
             border: 1px solid rgb(107, 106, 106);
             border-radius: 15px;
 
+            @media screen and (max-width: 1199px) {
+                width: 100%;
+                max-width: 635px;
+                margin-top: 30px !important;
+            }
+
+            @media screen and (max-width: 576px) {
+                display: block;
+                padding: 20px;
+            }
+
             .icon-wrapper {
                 width: 100%;
                 min-width: 49px;
                 max-width: 49px;
                 margin-right: 20px;
+
+                @media screen and (max-width: 576px) {
+                    margin-bottom: 12px;
+                }
 
                 img,
                 svg {
@@ -1285,6 +1584,14 @@ ul {
             text-align: center;
             color: $green;
 
+            @media screen and (max-width: 991px) {
+                margin-bottom: 60px;
+            }
+
+            @media screen and (max-width: 767px) {
+                margin-bottom: 40px;
+            }
+
             .icon-wrapper {
                 width: 100%;
                 max-width: 45px;
@@ -1307,19 +1614,37 @@ ul {
                 text-transform: uppercase;
                 font-size: 32px;
                 line-height: 1.31;
+
+                @media screen and (max-width: 991px) {
+                    font-size: 28px;
+                }
+
+                @media screen and (max-width: 767px) {
+                    font-size: 24px;
+                }
             }
 
             ul {
                 li {
                     margin-bottom: 20px;
 
+                    @media screen and (min-width: 767px) {
+                        white-space: nowrap;
+                    }
+
                     &:last-of-type {
                         margin-bottom: 0;
                     }
 
                     span {
+                        font-weight: 600;
                         display: inline-block;
                         min-width: 270px;
+
+                        @media screen and (max-width: 767px) {
+                            display: block;
+                            margin-bottom: 4px;
+                        }
                     }
                 }
             }
@@ -1327,6 +1652,14 @@ ul {
 
         &--additional-info {
             margin-top: 80px;
+
+            @media screen and (max-width: 991px) {
+                margin-top: 60px;
+            }
+
+            @media screen and (max-width: 767px) {
+                margin-top: 40px;
+            }
 
             p {
                 @extend .copy-sm;
@@ -1426,10 +1759,15 @@ ul {
     margin: 2px auto;
     font-weight: 500;
     transition: .3s all ease;
+
+    @media screen and (max-width: 576px) {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .ui-state-default:hover {
-    background: #12268F;
+    background: $dark-shine-blue;
     color: $white !important;
 }
 
@@ -1440,7 +1778,7 @@ ul {
 }
 
 .ui-state-active {
-    background: #12268F;
+    background: $dark-shine-blue;
     color: $white;
 }
 
