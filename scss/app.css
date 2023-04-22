@@ -312,6 +312,70 @@ ul.list-reset {
   background-image: url("data:image/svg+xml,%3Csvg width='26' height='15' viewBox='0 0 26 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 15L25.9904 0H0.00961876L13 15Z' fill='%23102F6A'/%3E%3C/svg%3E%0A");
 }
 
+.form-radio {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  min-height: 24px;
+  margin-bottom: 30px;
+}
+.form-radio:last-of-type {
+  margin-bottom: 0;
+}
+.form-radio label {
+  display: block;
+}
+
+[type=radio]:checked,
+[type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+[type=radio]:checked + label,
+[type=radio]:not(:checked) + label {
+  cursor: pointer;
+  line-height: 20px;
+}
+
+[type=radio]:checked + label:before,
+[type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #D9D9D9;
+  background: #D9D9D9 !important;
+  border-radius: 100%;
+  background: #fff;
+}
+
+[type=radio]:checked + label:after,
+[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: #12268F;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  transition: all 0.2s ease;
+}
+
+[type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+
+[type=radio]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .text-red {
   color: #A40909;
 }
@@ -1336,6 +1400,21 @@ ul.list-reset {
 .dashboard__body .booking-confirmation__success-message .content-block .btn-wrapper .btn {
   margin: 0 auto;
 }
+.dashboard__body .select-method {
+  padding: 30px 0;
+}
+@media screen and (min-width: 1199px) {
+  .dashboard__body .select-method {
+    margin-top: 40px;
+  }
+}
+.dashboard__body .select-method p,
+.dashboard__body .select-method label {
+  color: #12268F;
+}
+.dashboard__body .select-method p {
+  margin-bottom: 30px;
+}
 .dashboard__body .book-appointment {
   padding: 30px 0;
 }
@@ -1486,12 +1565,13 @@ ul.list-reset {
   margin-bottom: 0;
 }
 .dashboard .appointment-record--detail ul li span {
-  font-weight: 600;
+  font-weight: 500;
   display: inline-block;
   min-width: 270px;
 }
 @media screen and (max-width: 767px) {
   .dashboard .appointment-record--detail ul li span {
+    font-weight: 600;
     display: block;
     margin-bottom: 4px;
   }

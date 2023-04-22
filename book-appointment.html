@@ -31,35 +31,54 @@
       </div>
       <div class="dashboard__body">
         <div class="container">
-          <div class="book-appointment">
-            <div class="book-appointment__inner">
-              <h2>Select a date and time</h2>
-              <hr />
-              <div class="book-appointment--date-time">
-                <div class="row gx-5 gy-4 align-items-center">
-                  <div class="col-lg-7">
-                    <div class="book-appointment__date">
-                      <div id="datepicker" class="calendar"></div>
-                    </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="select-method">
+                <form action="">
+                  <p>Select Receiving Method:</p>
+                  <div class="form-radio">
+                    <input type="radio" id="delivery" name="mathod" value="delivery" />
+                    <label for="delivery">Delivery</label>
                   </div>
-                  <div class="col-lg-5">
-                    <div class="book-appointment__slot">
-                      <div class="row g-2">
-                        <div class="col-6"><a href="#" class="time-slot">07:30</a></div>
-                        <div class="col-6"><a href="#" class="time-slot">08:30</a></div>
-                        <div class="col-6"><a href="#" class="time-slot">09:30</a></div>
-                        <div class="col-6"><a href="#" class="time-slot">10:30</a></div>
-                        <div class="col-6"><a href="#" class="time-slot">11:30</a></div>
+                  <div class="form-radio">
+                    <input type="radio" id="drive-thru" name="mathod" value="drive-thru" />
+                    <label for="drive-thru">Drive-Thru</label>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="book-appointment">
+                <div class="book-appointment__inner">
+                  <h2>Select a date and time</h2>
+                  <hr />
+                  <div class="book-appointment--date-time">
+                    <div class="row gx-5 gy-4 align-items-center">
+                      <div class="col-lg-7">
+                        <div class="book-appointment__date">
+                          <div id="datepicker" class="calendar"></div>
+                        </div>
+                      </div>
+                      <div class="col-lg-5">
+                        <div class="book-appointment__slot">
+                          <div class="row g-2">
+                            <div class="col-6"><a href="#" class="time-slot">07:30</a></div>
+                            <div class="col-6"><a href="#" class="time-slot">08:30</a></div>
+                            <div class="col-6"><a href="#" class="time-slot">09:30</a></div>
+                            <div class="col-6"><a href="#" class="time-slot">10:30</a></div>
+                            <div class="col-6"><a href="#" class="time-slot">11:30</a></div>
+                          </div>
+                        </div>
+                        <br />
+                        <p class="selected copy-sm mb-1">Selected Date: <span class="selected__date">...</span></p>
+                        <p class="selected copy-sm">Selected TIme: <span class="selected__time">...</span></p>
                       </div>
                     </div>
-                    <br />
-                    <p class="selected copy-sm mb-1">Selected Date: <span class="selected__date">...</span></p>
-                    <p class="selected copy-sm">Selected TIme: <span class="selected__time">...</span></p>
+                    <div class="btns-wrapper mt-5 text-end">
+                      <a href="#" class="btn btn-gray">Cancel</a>
+                      <a href="#" class="btn btn-gray ms-3">Next</a>
+                    </div>
                   </div>
-                </div>
-                <div class="btns-wrapper mt-5 text-end">
-                  <a href="#" class="btn btn-gray">Cancel</a>
-                  <a href="#" class="btn btn-gray ms-3">Next</a>
                 </div>
               </div>
             </div>
